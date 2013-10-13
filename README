@@ -1,0 +1,46 @@
+This repository contains the code described in the paper An Application of Poincare's Fundamental Polyhedron Theorem, submitted as a senior thesis in the mathematics department of Columbia University in 2009. The paper is also included.
+
+Installation:
+
+$SAGE_HOME = /opt/sage
+cd $SAGE_HOME
+tar xzvf sage-.tar.gz
+cd $SAGE_HOME/local/lib/gap-/pkg/
+tar xzvf kbmag-.tar.gz
+/bin/sh ./configure ../..
+make
+
+Usage:
+
+load domain.sage
+load poincare.sage
+load volume.sage
+load data.sage
+
+sage: domain0 = get_domain(x_gens(0), x_rels(0));
+
+Determining automatic structure... true
+Estimating domain... 28 sides
+Checking hypotheses... true
+
+sage: volume(domain0);
+1.0149416064096536250212025542745202859408198695555103563?
+
+sage: get_plot(domain0);
+
+for benchmarking use '%time':
+%time domain0 = get_domain(x_gens(0), x_rels(0));
+
+
+X_0, 2, 5, 6 work with default options. # of sides:
+
+X_0: 22
+X_2: 36
+X_5: 30
+X_6: 30
+
+TODO:
+
+save/load kbmag
+use algebraic matrix entries
+detect ideal (proper) vertex
